@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;c:choose&gt;
+	&lt;c:when test="\${$1}"&gt;
+		$2
+	&lt;/c:when&gt;
+	&lt;c:otherwise&gt;
+		$3
+	&lt;/c:otherwise&gt;
+&lt;/c:choose&gt;</string>
+	<key>name</key>
+	<string>c:choose</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>c</string>
+	<key>uuid</key>
+	<string>6A897037-5C94-401F-954B-6B3155B79457</string>
+</dict>
+</plist>

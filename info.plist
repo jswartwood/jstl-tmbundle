@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JSP</string>
+	<string>JSTL</string>
 	<key>ordering</key>
 	<array>
 		<string>92A587AE-4933-4F67-9FE3-36BEB811AFB8</string>

@@ -2,10 +2,56 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>C3E7E8BF-1ED4-4AE5-B15F-0EB636D7E116</string>
+			<string>70E77139-746B-4C1C-A33C-594ECC2F34BD</string>
+			<string>64B091FB-9462-4047-825E-8FEDE5A7A779</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>64B091FB-9462-4047-825E-8FEDE5A7A779</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>6A897037-5C94-401F-954B-6B3155B79457</string>
+					<string>825EC093-4DF3-426E-9C8C-265EACEF32C7</string>
+					<string>F2A4BE4D-D18A-4FB4-B2BC-568FF2860194</string>
+					<string>E75AA243-8A58-458F-A29B-5EA58710C0BD</string>
+					<string>3DBB1449-11F0-441A-B8B4-17D6B6FB2E39</string>
+					<string>FB71FCAF-D303-4E4A-9697-5B2AF1712D47</string>
+				</array>
+				<key>name</key>
+				<string>Core tags</string>
+			</dict>
+			<key>70E77139-746B-4C1C-A33C-594ECC2F34BD</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>92A587AE-4933-4F67-9FE3-36BEB811AFB8</string>
+					<string>B37232E6-9701-4AD9-B89C-8BA14D658BB8</string>
+					<string>83F2D2B4-C730-4B46-8D05-25E358F838E3</string>
+				</array>
+				<key>name</key>
+				<string>Jsp tags</string>
+			</dict>
+			<key>C3E7E8BF-1ED4-4AE5-B15F-0EB636D7E116</key>
+			<dict>
+				<key>items</key>
+				<array/>
+				<key>name</key>
+				<string>Directives</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>name</key>
 	<string>JSTL</string>
 	<key>ordering</key>
 	<array>
+		<string>4E2417D3-F7CC-42F1-9AF6-57FAC812B178</string>
+		<string>CB4B407B-7923-448E-9AF4-61D1D7D191A2</string>
 		<string>92A587AE-4933-4F67-9FE3-36BEB811AFB8</string>
 		<string>B37232E6-9701-4AD9-B89C-8BA14D658BB8</string>
 		<string>83F2D2B4-C730-4B46-8D05-25E358F838E3</string>

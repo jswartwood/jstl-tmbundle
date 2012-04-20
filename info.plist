@@ -9,6 +9,8 @@
 			<string>C3E7E8BF-1ED4-4AE5-B15F-0EB636D7E116</string>
 			<string>70E77139-746B-4C1C-A33C-594ECC2F34BD</string>
 			<string>64B091FB-9462-4047-825E-8FEDE5A7A779</string>
+			<string>4E2417D3-F7CC-42F1-9AF6-57FAC812B178</string>
+			<string>CB4B407B-7923-448E-9AF4-61D1D7D191A2</string>
 		</array>
 		<key>submenus</key>
 		<dict>
@@ -33,6 +35,8 @@
 					<string>92A587AE-4933-4F67-9FE3-36BEB811AFB8</string>
 					<string>B37232E6-9701-4AD9-B89C-8BA14D658BB8</string>
 					<string>83F2D2B4-C730-4B46-8D05-25E358F838E3</string>
+					<string>73D86563-B7A0-4CA1-9192-AED44DAE0244</string>
+					<string>F5DC60DA-BA4C-4622-8FBD-473AA3E2BA34</string>
 				</array>
 				<key>name</key>
 				<string>Jsp tags</string>
@@ -55,6 +59,8 @@
 		<string>92A587AE-4933-4F67-9FE3-36BEB811AFB8</string>
 		<string>B37232E6-9701-4AD9-B89C-8BA14D658BB8</string>
 		<string>83F2D2B4-C730-4B46-8D05-25E358F838E3</string>
+		<string>73D86563-B7A0-4CA1-9192-AED44DAE0244</string>
+		<string>F5DC60DA-BA4C-4622-8FBD-473AA3E2BA34</string>
 		<string>6A897037-5C94-401F-954B-6B3155B79457</string>
 		<string>825EC093-4DF3-426E-9C8C-265EACEF32C7</string>
 		<string>F2A4BE4D-D18A-4FB4-B2BC-568FF2860194</string>

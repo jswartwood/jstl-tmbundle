@@ -22,18 +22,28 @@
 		<dict>
 			<!-- Start by targeting all alphanumeric tags with colons in them -->
 			<key>begin</key>
-			<string>(&lt;/?)([a-zA-Z0-9]++(:)[a-zA-Z0-9]+)</string>
+			<string>(&lt;/?)(([a-zA-Z0-9]++)(:)[a-zA-Z0-9]+)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.embedded.dsp</string>
+					<string>punctuation.definition.tag.begin.jsp</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>meta.tag.block.dsp</string>
+					<string>entity.name.tag.jsp</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.namespace.jsp</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.namespace.jsp</string>
 				</dict>
 			</dict>
 			<!-- then target the closers -->
@@ -44,22 +54,73 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.section.embedded.dsp</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>meta.tag.block.dsp</string>
+					<string>punctuation.definition.tag.end.jsp</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
 			<array>
 				<!-- target the substrings separately -->
 				<dict>
-					<key>match</key>
-					<string>([""'])(?:(?=(\\?))\2.)*?\1</string>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
 					<key>name</key>
-					<string>string</string>
+					<string>string.quoted.single.html.jsp</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expression-language</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.html.jsp</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#expression-language</string>
+						</dict>
+					</array>
 				</dict>
 				<!-- target the equals separately -->
 				<dict>
@@ -75,6 +136,26 @@
 			<string>text.html.jsp</string>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>expression-language</key>
+		<dict>
+			<key>begin</key>
+			<string>\$\{</string>
+			<key>end</key>
+			<string>\}</string>
+			<key>name</key>
+			<string>string.interpolated.el</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<!-- This is really a hack; python is _pretty close_ in syntax -->
+					<string>source.python</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>text.html.jsp.jstl</string>
 	<key>uuid</key>

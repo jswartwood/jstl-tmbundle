@@ -22,7 +22,7 @@
 		<dict>
 			<!-- Start by targeting all alphanumeric tags with colons in them -->
 			<key>begin</key>
-			<string>(&lt;/?)(([a-zA-Z0-9]++)(:)[a-zA-Z0-9]+)</string>
+			<string>(&lt;/?)(([a-zA-Z0-9\-]++)(:)[a-zA-Z0-9\-]+)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -135,6 +135,11 @@
 			<key>include</key>
 			<string>text.html.jsp</string>
 		</dict>
+		<!-- This should work (perhaps?); doesn't seem to be -->
+		<dict>
+			<key>include</key>
+			<string>#expression-language</string>
+		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
@@ -148,10 +153,34 @@
 			<string>string.interpolated.el</string>
 			<key>patterns</key>
 			<array>
+				<!-- This is really a hack; python is _pretty close_ in syntax -->
+				<!--<dict>
+					<key>include</key>
+					<string>source.python</string>
+				</dict>-->
 				<dict>
 					<key>include</key>
-					<!-- This is really a hack; python is _pretty close_ in syntax -->
-					<string>source.python</string>
+					<string>#el-source</string>
+				</dict>
+			</array>
+		</dict>
+		<key>el-source</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>comment</key>
+					<string>operators that evaluate to True or False</string>
+					<key>match</key>
+					<string>\b(and|or|not|empty|\!|\|\||&amp;&amp;)\b</string>
+					<key>name</key>
+					<string>keyword.operator.logical.el</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&lt;\=|&gt;\=|\=\=|&lt;|&gt;|\!\=|\beq\b|\bne\b</string>
+					<key>name</key>
+					<string>keyword.operator.comparison.el</string>
 				</dict>
 			</array>
 		</dict>

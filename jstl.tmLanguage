@@ -18,32 +18,36 @@
 	<string>JSTL</string>
 	<key>patterns</key>
 	<array>
+		<dict>
+			<key>include</key>
+			<string>#expression-language</string>
+		</dict>
 		<!-- Targeting all of the JSP tags/attributes separately; This should let us color them however we want -->
 		<dict>
 			<!-- Start by targeting all alphanumeric tags with colons in them -->
 			<key>begin</key>
-			<string>(&lt;/?)(([a-zA-Z0-9\-]++)(:)[a-zA-Z0-9\-]+)</string>
+			<string>(&lt;/?)(([a-zA-Z0-9\-]++)(:)([a-zA-Z0-9\-]+))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.begin.jsp</string>
+					<string>punctuation.definition.tag.begin.html.jsp</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.jsp</string>
+					<string>entity.name.tag.html.jsp</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.namespace.jsp</string>
+					<string>entity.name.tag.namespace.html.jsp</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.separator.namespace.jsp</string>
+					<string>punctuation.separator.namespace.html.jsp</string>
 				</dict>
 			</dict>
 			<!-- then target the closers -->
@@ -54,73 +58,22 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.jsp</string>
+					<string>punctuation.definition.tag.end.html.jsp</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
 			<array>
-				<!-- target the substrings separately -->
 				<dict>
-					<key>begin</key>
-					<string>'</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.html</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>'</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.html</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quoted.single.html.jsp</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#expression-language</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#double-quotes</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>"</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.html</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>"</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.html</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quoted.double.html.jsp</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#expression-language</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#single-quotes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-generic-attribute</string>
 				</dict>
 				<!-- target the equals separately -->
 				<dict>
@@ -131,33 +84,152 @@
 				</dict>
 			</array>
 		</dict>
+		<!--<dict>
+			<key>begin</key>
+			<string>(&lt;/?)([a-zA-Z0-9\-]++)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.html</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#double-quotes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#single-quotes</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-generic-attribute</string>
+				</dict>
+			</array>
+		</dict>-->
 		<dict>
 			<key>include</key>
 			<string>text.html.jsp</string>
 		</dict>
-		<!-- This should work (perhaps?); doesn't seem to be -->
-		<dict>
-			<key>include</key>
-			<string>#expression-language</string>
-		</dict>
 	</array>
 	<key>repository</key>
 	<dict>
+		<key>tag-generic-attribute</key>
+		<dict>
+			<key>match</key>
+			<string>\b([a-zA-Z\-:]+)</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.html.jsp</string>
+		</dict>
+		<key>single-quotes</key>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.html.jsp</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.html.jsp</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.html.jsp</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#expression-language</string>
+				</dict>
+			</array>
+		</dict>
+		<key>double-quotes</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.html.jsp</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>"</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.html.jsp</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.html.jsp</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#expression-language</string>
+				</dict>
+			</array>
+		</dict>
 		<key>expression-language</key>
 		<dict>
 			<key>begin</key>
 			<string>\$\{</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.interpolated.begin.el</string>
+				</dict>
+			</dict>
 			<key>end</key>
 			<string>\}</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.interpolated.end.el</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>string.interpolated.el</string>
 			<key>patterns</key>
 			<array>
-				<!-- This is really a hack; python is _pretty close_ in syntax -->
-				<!--<dict>
-					<key>include</key>
-					<string>source.python</string>
-				</dict>-->
 				<dict>
 					<key>include</key>
 					<string>#el-source</string>
@@ -172,7 +244,7 @@
 					<key>comment</key>
 					<string>operators that evaluate to True or False</string>
 					<key>match</key>
-					<string>\b(and|or|not|empty|\!|\|\||&amp;&amp;)\b</string>
+					<string>\b(and|or|not|empty|\!|\|\||&amp;&amp;)|\?|\:\b</string>
 					<key>name</key>
 					<string>keyword.operator.logical.el</string>
 				</dict>

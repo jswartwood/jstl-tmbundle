@@ -32,22 +32,22 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.begin.html.jsp</string>
+					<string>punctuation.definition.tag.begin.jsp</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.html.jsp</string>
+					<string>entity.name.tag.jsp</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.namespace.html.jsp</string>
+					<string>entity.name.tag.namespace.jsp</string>
 				</dict>
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.separator.namespace.html.jsp</string>
+					<string>punctuation.separator.namespace.jsp</string>
 				</dict>
 			</dict>
 			<!-- then target the closers -->
@@ -58,7 +58,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.end.html.jsp</string>
+					<string>punctuation.definition.tag.end.jsp</string>
 				</dict>
 			</dict>
 			<key>patterns</key>
@@ -138,7 +138,7 @@
 			<key>match</key>
 			<string>\b([a-zA-Z\-:]+)</string>
 			<key>name</key>
-			<string>entity.other.attribute-name.html.jsp</string>
+			<string>entity.other.attribute-name.jsp</string>
 		</dict>
 		<key>single-quotes</key>
 		<dict>
@@ -149,7 +149,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.html.jsp</string>
+					<string>punctuation.definition.string.begin.jsp</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -159,11 +159,11 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.html.jsp</string>
+					<string>punctuation.definition.string.end.jsp</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.single.html.jsp</string>
+			<string>string.quoted.single.jsp</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -181,7 +181,7 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.begin.html.jsp</string>
+					<string>punctuation.definition.string.begin.jsp</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -191,11 +191,11 @@
 				<key>0</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.string.end.html.jsp</string>
+					<string>punctuation.definition.string.end.jsp</string>
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>string.quoted.double.html.jsp</string>
+			<string>string.quoted.double.jsp</string>
 			<key>patterns</key>
 			<array>
 				<dict>
